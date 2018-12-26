@@ -1,0 +1,49 @@
+CREATE PROCEDURE [dbo].[uspLoad_tmp_Ventas] @tmp_Ventas tmp_Ventas READONLY    
+AS    
+BEGIN      
+INSERT INTO  tmp_Ventas   
+(    
+[id_transaccion],  
+[id_cliente],  
+[nombre_operacion],  
+[fecha_pago],  
+[anio_pago],  
+[mes_pago],  
+[dia_pago],  
+[monto_transaccion],  
+[telefono_origen],  
+[telefono_destino],  
+[tipo_linea],  
+[estado_operacion],  
+[metodo_pago],  
+[canal],  
+[mercado],  
+[motivo_fallo_pasarela],  
+[fechar_carga],  
+[pasarela]  
+)    
+SELECT     
+[id_transaccion],  
+[id_cliente],  
+[nombre_operacion],  
+[fecha_pago],  
+[anio_pago],  
+[mes_pago],  
+[dia_pago],  
+[monto_transaccion],  
+[telefono_origen],  
+[telefono_destino],  
+[tipo_linea],  
+[estado_operacion],  
+[metodo_pago],  
+[canal],  
+[mercado],  
+[motivo_fallo_pasarela],  
+[fechar_carga],  
+[pasarela]  
+FROM @tmp_Ventas   
+
+UPDATE [dbo].tmp_Ventas  SET canal='APP' WHERE canal='Canal APP'
+UPDATE [dbo].tmp_Ventas  SET canal='WEB PRIVADA' WHERE canal='WEB'
+
+END

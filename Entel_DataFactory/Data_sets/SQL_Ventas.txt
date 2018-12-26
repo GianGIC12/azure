@@ -1,0 +1,73 @@
+{
+    "name": "SQL_Ventas",
+    "properties": {
+        "structure": [
+            {
+                "name": "id_transaccion"
+            },
+            {
+                "name": "id_cliente"
+            },
+            {
+                "name": "nombre_operacion"
+            },
+            {
+                "name": "fecha_pago"
+            },
+            {
+                "name": "anio_pago"
+            },
+            {
+                "name": "mes_pago"
+            },
+            {
+                "name": "dia_pago"
+            },
+            {
+                "name": "monto_transaccion"
+            },
+            {
+                "name": "telefono_origen"
+            },
+            {
+                "name": "telefono_destino"
+            },
+            {
+                "name": "tipo_linea"
+            },
+            {
+                "name": "estado_operacion"
+            },
+            {
+                "name": "metodo_pago"
+            },
+            {
+                "name": "canal"
+            },
+            {
+                "name": "mercado"
+            },
+            {
+                "name": "motivo_fallo_pasarela"
+            },
+            {
+                "name": "fechar_carga"
+            },
+            {
+                "name": "pasarela"
+            }
+        ],
+        "published": false,
+        "type": "AzureSqlTable",
+        "linkedServiceName": "conecctionSQL",
+        "typeProperties": {
+            "tableName": "tmp_Ventas"
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1,
+            "offset": "10:00:00",
+            "style": "StartOfInterval"
+        }
+    }
+}

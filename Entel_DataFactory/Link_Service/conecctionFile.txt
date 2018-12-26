@@ -1,0 +1,14 @@
+{
+    "name": "Connection_FileShare",
+    "properties": {
+        "description": "",
+        "hubName": "dfentel_hub",
+        "type": "OnPremisesFileServer",
+        "typeProperties": {
+            "host": "D:\\",
+            "gatewayName": "Entel_Sync",
+            "userId": "usr_tabmetricas",
+            "password": "**********"
+        }
+    }
+}

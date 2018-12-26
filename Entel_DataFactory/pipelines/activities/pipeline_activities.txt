@@ -1,0 +1,31 @@
+{
+    "name": "Delete_consolidado_mensual",
+    "properties": {
+        "description": "Copy from FileSHare to SQL",
+        "activities": [
+            {
+                "type": "SqlServerStoredProcedure",
+                "typeProperties": {
+                    "storedProcedureName": "delete_tmp_consolidado"
+                },
+                "outputs": [
+                    {
+                        "name": "Delete_consolidado_mensual"
+                    }
+                ],
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1,
+                    "offset": "06:00:00",
+                    "style": "StartOfInterval"
+                },
+                "name": "Activity_Access_Blob_SQL"
+            }
+        ],
+        "start": "2018-10-16T00:00:00Z",
+        "end": "2028-10-17T00:00:00Z",
+        "isPaused": false,
+        "hubName": "DFNexo_hub",
+        "pipelineMode": "Scheduled"
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "name": "FileShare_BASE_TRANSACCIONES",
+    "properties": {
+        "structure": [
+            {
+                "name": "id_transaccion"
+            },
+            {
+                "name": "id_cliente"
+            },
+            {
+                "name": "nombre_operacion"
+            },
+            {
+                "name": "fecha_pago"
+            },
+            {
+                "name": "anio_pago"
+            },
+            {
+                "name": "mes_pago"
+            },
+            {
+                "name": "dia_pago"
+            },
+            {
+                "name": "monto_transaccion"
+            },
+            {
+                "name": "telefono_origen"
+            },
+            {
+                "name": "telefono_destino"
+            },
+            {
+                "name": "tipo_linea"
+            },
+            {
+                "name": "estado_operacion"
+            },
+            {
+                "name": "metodo_pago"
+            },
+            {
+                "name": "canal"
+            },
+            {
+                "name": "mercado"
+            },
+            {
+                "name": "motivo_fallo_pasarela"
+            },
+            {
+                "name": "fechar_carga"
+            },
+            {
+                "name": "pasarela"
+            }
+        ],
+        "published": false,
+        "type": "FileShare",
+        "linkedServiceName": "Connection_File",
+        "typeProperties": {
+            "fileName": "BASE_TRANSACCIONES_{DateSlice}.csv",
+            "folderPath": "C:/Reportes_GA_finales/completed",
+            "format": {
+                "type": "TextFormat",
+                "rowDelimiter": "\n",
+                "columnDelimiter": ",",
+                "firstRowAsHeader": true
+            },
+            "partitionedBy": [
+                {
+                    "name": "DateSlice",
+                    "value": {
+                        "type": "DateTime",
+                        "date": "SliceStart",
+                        "format": "yyyyMM"
+                    }
+                }
+            ]
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1,
+            "offset": "10:00:00",
+            "style": "StartOfInterval"
+        },
+        "external": true,
+        "policy": {}
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "AzureSqlLinkedService",
+    "properties": {
+        "description": "",
+        "hubName": "dfentel_hub",
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+            "connectionString": "Data Source=tcp:entelbd.database.windows.net,1433;Initial Catalog=PowerBI_Entel;Integrated Security=False;User ID=usrentel;Password=**********;Connect Timeout=30;Encrypt=True"
+        }
+    }
+}

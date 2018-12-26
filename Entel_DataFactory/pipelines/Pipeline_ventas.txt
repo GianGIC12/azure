@@ -1,0 +1,46 @@
+{
+    "name": "pipeline_Ventas",
+    "properties": {
+        "description": "Tutorial",
+        "activities": [
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "FileSystemSource"
+                    },
+                    "sink": {
+                        "type": "SqlSink",
+                        "sqlWriterStoredProcedureName": "[uspLoad_tmp_Ventas]",
+                        "sqlWriterTableType": "tmp_Ventas",
+                        "sqlWriterCleanupScript": "TRUNCATE TABLE tmp_Ventas",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "File_ventas"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "SQL_Ventas"
+                    }
+                ],
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1,
+                    "offset": "10:00:00",
+                    "style": "StartOfInterval"
+                },
+                "name": "Activity_Access_Blob_SQL"
+            }
+        ],
+        "start": "2018-12-26T00:00:00Z",
+        "end": "2018-12-28T00:00:00Z",
+        "isPaused": false,
+        "hubName": "dfentel_hub",
+        "pipelineMode": "Scheduled"
+    }
+}

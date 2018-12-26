@@ -1,0 +1,17 @@
+{
+    "name": "Delete_consolidado_mensual",
+    "properties": {
+        "published": false,
+        "type": "AzureSqlTable",
+        "linkedServiceName": "connectionSQL",
+        "typeProperties": {
+            "tableName": "consolidado_mensual"
+        },
+        "availability": {
+            "frequency": "Day",
+            "interval": 1,
+            "offset": "06:00:00",
+            "style": "StartOfInterval"
+        }
+    }
+}
